@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novo Ticket</title>
+    
+    <!-- 
+    ===============================================================
+    VARIÁVEIS UTILIZADAS NO TEMPLATE
+    ===============================================================
+    
+    Cores:
+    - Azul escuro corporativo: #191B41
+    - Amarelo para botões e destaques: #EBCF59
+    - Cinza claro para fundo do email: #F5F5F5
+    - Cor padrão para textos: #667085
+    - Cor para títulos: #191B41
+    - Cor para subtítulos: #667085
+    - Fundo amarelo claro para status de alerta: #FFE58A
+    - Amarelo escuro para texto de status de alerta: #664D04
+    - Cor para textos do rodapé: #333333
+    - Cor para links: #0B63E5
+    
+    Dimensões:
+    - Largura máxima do email: 600px
+    - Largura do conteúdo interno: 536px
+    - Raio de borda para contêineres: 10px
+    - Raio de borda para pílulas de status: 50px
+    - Raio de borda para botões principais: 6px
+    
+    Fontes:
+    - Fonte padrão: 'Inter', Arial, sans-serif
+    - Tamanho para títulos: 18px
+    - Tamanho para subtítulos: 15px
+    - Tamanho para botões: 14px
+    
+    Espaçamentos:
+    - Padding do container: 32px 10px
+    - Padding do conteúdo: 24px 32px
+    - Padding dos botões: 12px 14px
+    
+    Placeholders para substituição dinâmica:
+    - {{numeroTicket}} - Número do ticket
+    - {{nome_do_modulo}} - Nome do módulo
+    - {{nome_do_indicador}} - Nome do indicador
+    - {{descricao_ticket}} - Descrição do ticket
+    - {{nome_criador}} - Nome do criador do ticket
+    - {{data_hora}} - Data e hora da criação
+    - {{link_visualizar_ticket}} - Link para visualizar o ticket
+    - {{link_download}} - Link para download do aplicativo
+    - {{link_preferencias_email}} - Link para preferências de email
+    - {{link_facebook}} - Link para Facebook
+    - {{link_instagram}} - Link para Instagram
+    - {{link_linkedin}} - Link para LinkedIn
+    
+    Imagens:
+    - LogoDelfos.png - Logo do Delfos
+    - LogoEquatorial.png - Logo da Equatorial
+    
+    ===============================================================
+    -->
+    
+    <!--[if mso]>
+    <style type="text/css">
+        body, table, td {font-family: Arial, Helvetica, sans-serif !important;}
+    </style>
+    <![endif]-->
+    <style type="text/css">
+        /* CSS Reset */
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            -webkit-text-size-adjust: 100% !important;
+            -ms-text-size-adjust: 100% !important;
+            -webkit-font-smoothing: antialiased !important;
+        }
+        
+        img {
+            border: 0 !important;
+            outline: none !important;
+            display: block !important;
+            -ms-interpolation-mode: bicubic;
+        }
+        
+        p {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+        
+        td {
+            border-collapse: collapse !important;
+        }
+        
+        a {
+            color: inherit !important;
+            text-decoration: none !important;
+        }
+        
+        /* Estilos Base */
+        .ExternalClass {
+            width: 100%;
+        }
+        
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+            line-height: 100%;
+        }
+        
+        /* Smartphones */
+        @media only screen and (max-width: 620px) {
+            .container-padding {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            
+            .main-container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            
+            .content-container {
+                width: 100% !important;
+            }
+            
+            .content-padding {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            
+            .logo-container {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            
+            .logo {
+                margin: 0 auto !important;
+            }
+            
+            .ticket-info {
+                padding: 15px !important;
+            }
+            
+            .status-pill {
+                margin-top: 10px !important;
+            }
+            
+            .action-button {
+                display: block !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                text-align: center !important;
+            }
+            
+            .footer-padding {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            
+            .social-container {
+                width: 100% !important;
+                text-align: center !important;
+                padding-top: 10px !important;
+            }
+            
+            .footer-logo {
+                text-align: center !important;
+                width: 100% !important;
+            }
+            
+            .footer-links {
+                width: 100% !important;
+                text-align: center !important;
+            }
+        }
+        
+        /* Dispositivos pequenos */
+        @media only screen and (max-width: 480px) {
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            
+            .stack-column-center {
+                text-align: center !important;
+            }
+            
+            .status-wrapper {
+                display: block !important;
+                width: 100% !important;
+                text-align: left !important;
+                padding-top: 10px !important;
+            }
+            
+            .ticket-number {
+                display: block !important;
+                width: 100% !important;
+            }
+            
+            .info-item {
+                padding-bottom: 10px !important;
+            }
+            
+            .signature-divider {
+                width: 80% !important;
+            }
+        }
+    </style>
+</head>
+
+<body bgcolor="#F5F5F5" style="margin: 0; padding: 0; font-family: 'Inter', Arial, Helvetica, sans-serif; font-size: 15px; color: #667085; -webkit-font-smoothing: antialiased;">
+    <!-- Wrapper Principal -->
+    <!--[if mso]>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td align="center" bgcolor="#F5F5F5">
+    <![endif]-->
+    
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F5F5F5" style="min-width: 320px; width: 100%; -webkit-font-smoothing: antialiased;">
+        <tr>
+            <td align="center" class="container-padding" style="padding: 32px 10px;">
+                <!-- Container do Email -->
+                <!--[if mso]>
+                <table width="600" cellpadding="0" cellspacing="0" border="0" align="center">
+                    <tr>
+                        <td>
+                <![endif]-->
+                
+                <table cellpadding="0" cellspacing="0" border="0" class="main-container" style="width: 600px; max-width: 600px;">
+                    <!-- Seção do Logo -->
+                    <tr>
+                        <td align="center" class="logo-container" style="padding-bottom: 24px;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 536px; max-width: 536px;">
+                                <tr>
+                                    <td align="center">
+                                        <!-- Logo da empresa -->
+                                        <img src="cid:LogoDelfos.png" alt="Delfos" width="536" class="logo" style="max-width: 536px; height: auto; display: block; background-color: #191B41;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- Seção de Conteúdo Principal -->
+                    <tr>
+                        <td align="center" class="content-container">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 536px; max-width: 536px; background-color: #FFFFFF; border-radius: 10px;">
+                                <!-- Conteúdo do Cabeçalho -->
+                                <tr>
+                                    <td class="content-padding" style="padding: 24px 32px;">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <!-- Título -->
+                                            <tr>
+                                                <td style="font-family: 'Inter', Arial, sans-serif; font-weight: 600; font-size: 18px; line-height: 22px; color: #191B41; padding-bottom: 8px;">
+                                                    Um novo ticket foi encaminhado à você.
+                                                </td>
+                                            </tr>
+                                            
+                                            <!-- Subtítulo -->
+                                            <tr>
+                                                <td style="font-family: 'Inter', Arial, sans-serif; font-weight: 400; font-size: 15px; line-height: 24px; color: #667085; padding-bottom: 32px;">
+                                                    Informamos que o ticket número #{{numeroTicket}}, registrado pelo indicador INS, foi encaminhado à você para análise.
+                                                </td>
+                                            </tr>
+                                            
+                                           <!-- Informações do Ticket -->
+                                            <tr>
+                                                <td style="padding-bottom: 24px;">
+                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #F5F5F5; border-radius: 12px; box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);">
+                                                        <tr>
+                                                            <td class="ticket-info" style="padding: 20px;">
+                                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                    <!-- Módulo e Indicador na parte superior -->
+                                                                    <tr>
+                                                                        <td style="font-family: 'Inter', Arial, sans-serif; font-size: 14px; line-height: 20px; color: #75768D; padding-bottom: 12px; text-align: center;">
+                                                                            {{nome_do_modulo}} &gt; {{nome_do_indicador}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    
+                                                                    <!-- Linha 1: Número do Ticket e Status -->
+                                                                    <tr>
+                                                                        <td style="padding-bottom: 16px;">
+                                                                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                                <tr>
+                                                                                    <td class="ticket-number" style="font-family: 'Inter', Arial, sans-serif; font-weight: 600; font-size: 16px; line-height: 24px; color: #3d3d3d; width: 70%;">
+                                                                                        Ticket #{{numeroTicket}}
+                                                                                    </td>
+                                                                                    <td class="status-wrapper" align="right" style="width: 30%;">
+                                                                                        <table cellpadding="0" cellspacing="0" border="0" align="right">
+                                                                                            <tr>
+                                                                                                <td class="status-pill" style="background-color: #FFA0A8; border-radius: 12px; font-family: 'Font Awesome 6 Pro', Arial, sans-serif; font-weight: 700; font-size: 12px; line-height: 18px; color: #A01420; padding: 4px 12px;">
+                                                                                                    Novo
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    
+                                                                    <!-- Linha 2: Descrição com ícone -->
+                                                                    <tr>
+                                                                        <td style="padding-bottom: 16px;">
+                                                                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                                <tr>
+                                                                                    <td style="width: 16px; vertical-align: top;">
+                                                                                        <!-- Ícone de documento -->
+                                                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48cGF0aCBmaWxsPSIjNjY3MDg1IiBkPSJNOSA5aDZ2Mkg5Vjl6bTAgNGg2djJIOXYtMnpNMjEgM0gzYy0xLjEgMC0yIC45LTIgMnYxNGMwIDEuMS45IDIgMiAyaDE4YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMTZIM1Y1aDE4djE0eiIvPjwvc3ZnPg==" alt="Descrição ícone" width="16" height="16" style="display: block; margin-right: 8px;">
+                                                                                    </td>
+                                                                                    <td style="font-family: 'Inter', Arial, sans-serif; font-size: 14px; line-height: 22px; color: #191B41; vertical-align: top;">
+                                                                                        {{descricao_ticket}}
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    
+                                                                    <!-- Linha 3: Criado por com ícone -->
+                                                                    <tr>
+                                                                        <td>
+                                                                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                                                <tr>
+                                                                                    <td style="width: 16px; vertical-align: top;">
+                                                                                        <!-- Ícone de usuário -->
+                                                                                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48cGF0aCBmaWxsPSIjNjY3MDg1IiBkPSJNMTIgMTJjMi4yMSAwIDQtMS43OSA0LTRzLTEuNzktNC00LTQtNCAxLjc5LTQgNCAxLjc5IDQgNCA0em0wIDJjLTIuNjcgMC04IDEuMzQtOCA0djJoMTZ2LTJjMC0yLjY2LTUuMzMtNC04LTR6Ii8+PC9zdmc+" alt="Usuário ícone" width="16" height="16" style="display: block; margin-right: 8px;">
+                                                                                    </td>
+                                                                                    <td style="font-family: 'Inter', Arial, sans-serif; font-size: 14px; line-height: 22px; color: #191B41; vertical-align: top;">
+                                                                                        Criado por {{nome_criador}}
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            
+                                            <!-- Mensagem Adicional -->
+                                            <tr>
+                                                <td style="font-family: 'Inter', Arial, sans-serif; font-weight: 400; font-size: 15px; line-height: 24px; color: #667085; padding-bottom: 24px;">
+                                                    Para visualizar os detalhes, clique no botão abaixo:
+                                                </td>
+                                            </tr>
+                                            
+                                            <!-- Botão de Ação Principal -->
+                                            <tr>
+                                                <td align="center" style="padding-bottom: 32px;">
+                                                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                                                        <tr>
+                                                            <td class="action-button" style="background-color: #EBCF59; border-radius: 6px; font-family: 'Inter', Arial, sans-serif; font-weight: 600; font-size: 14px; line-height: 18px; color: #191B41; text-align: center;">
+                                                                <a href="{{link_visualizar_ticket}}" style="display: block; padding: 12px 14px; text-decoration: none; color: #191B41;">
+                                                                    Ver ticket
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            
+                                            <!-- Seção de Assinatura -->
+                                            <tr>
+                                                <td style="padding-top: 20px;">
+                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <!-- Título -->
+                                                        <tr>
+                                                            <td align="center" style="padding-bottom: 12px; font-family: 'Inter', Arial, sans-serif; font-weight: 600; font-size: 16px; line-height: 24px; color: #344054;">
+                                                                Baixe o aplicativo Delfos!
+                                                            </td>
+                                                        </tr>
+
+                                                        <!-- Texto de Descrição -->
+                                                        <tr>
+                                                            <td align="left" style="padding-bottom: 20px; font-family: 'Inter', Arial, sans-serif; font-weight: 400; font-size: 14px; line-height: 22px; color: #667085;">
+                                                                Aproveite ao máximo do Delfos instalando o aplicativo móvel. Você pode fazer login usando seu endereço de e-mail e senha existentes.
+                                                            </td>
+                                                        </tr>
+
+                                                        <!-- Botão -->
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block;">
+                                                                    <tr>
+                                                                        <td class="action-button" style="border: 1px solid #344054; border-radius: 50px; font-family: 'Inter', Arial, sans-serif; font-weight: 600; font-size: 14px; line-height: 18px; text-align: center; background-color: #ffffff;">
+                                                                            <a href="{{link_download}}" style="display: block; padding: 10px 20px; text-decoration: none; color: #344054;">
+                                                                                Baixe o App
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- Seção do Rodapé -->
+                    <tr>
+                        <td align="center" style="padding-top: 24px;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 536px; max-width: 536px; background-color: #FFFFFF; border-radius: 0px 0px 4px 4px;">
+                                <tr>
+                                    <td class="footer-padding" style="padding: 32px;">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <!-- Texto do rodapé -->
+                                            <tr>
+                                                <td align="left" style="padding-bottom: 40px; font-family: 'Inter', Arial, sans-serif; font-weight: 400; font-size: 14px; line-height: 20px; color: #333333;">
+                                                    Este é um e-mail automático. Se você preferir não receber esse tipo de e-mail, você pode 
+                                                    <a href="{{link_preferencias_email}}" style="color: #0B63E5; font-weight: 600; text-decoration: none;">gerenciar suas preferências de e-mail</a>.
+                                                </td>
+                                            </tr>
+                                            
+                                            <!-- Logo e Redes Sociais -->
+                                            <tr>
+                                                <td>
+                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                        <tr>
+                                                            <!-- Logo do rodapé -->
+                                                            <td class="footer-logo stack-column-center" style="width: 50%;">
+                                                                <img src="cid:LogoEquatorial.png" alt="Logo" width="472" height="24" style="display: block;">
+                                                            </td>
+                                                            
+                                                            <!-- Área reservada para redes sociais -->
+                                                            <td class="social-container stack-column-center" align="right" style="width: 50%;">
+                                                                <!-- Área para redes sociais - Comentada no original -->
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                
+                <!--[if mso]>
+                        </td>
+                    </tr>
+                </table>
+                <![endif]-->
+            </td>
+        </tr>
+    </table>
+    
+    <!--[if mso]>
+            </td>
+        </tr>
+    </table>
+    <![endif]-->
+</body>
+</html>

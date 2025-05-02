@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Bem-vindo ao Delfos!</title>
+  
+  <!-- 
+  ===============================================================
+  VARIÁVEIS UTILIZADAS NO TEMPLATE
+  ===============================================================
+  
+  Variáveis para informações do usuário:
+  - [Nome do usuário que convidou] - Nome da pessoa que enviou o convite
+  - [perfil] - Perfil de acesso atribuído ao novo usuário
+  - https://delfos.com.br - URL da plataforma Delfos
+  - suporte@delfos.com.br - Email de contato para suporte
+  
+  Imagens:
+  - LogoDelfos.png - Logo da Delfos para o cabeçalho
+  
+  Cores:
+  - #1c2856 - Azul escuro do cabeçalho
+  - #FDDD6A - Amarelo para a onda
+  - #fbbf24 - Amarelo para o botão CTA
+  - #191b41 - Azul escuro para texto do botão
+  - #ffffff - Branco para fundo do conteúdo
+  - #f5f5f5 - Cinza claro para fundo da página
+  - #333333 - Cinza escuro para títulos
+  - #4a4a4a - Cinza médio para texto do conteúdo
+  - #777777 - Cinza para texto do rodapé
+  
+  ===============================================================
+  -->
+  
+  <style>
+    /* RESET CSS */
+    body, table, td, a {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    table {
+      border-spacing: 0 !important;
+      border-collapse: collapse !important;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+    a {
+      text-decoration: none;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333333;
+    }
+
+    /* DESIGN */
+    .email-container {
+      max-width: 600px;
+      width: 100%;
+      background: #ffffff;
+      margin: auto;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      background-color: #1c2856;
+      text-align: center;
+      padding: 32px;
+      position: relative;
+      height: 120px; /* Ajuste a altura conforme necessário */
+      overflow: visible;
+    }
+    .header img.logo {
+      max-width: 150px;
+    }
+    .wave-container {
+      position: relative;
+      height: 60px; /* Altura para a wave */
+      width: 100%;
+      overflow: visible;
+    }
+    .wave {
+      position: absolute;
+      width: 546px;
+      height: 54px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -20px; /* Ajuste conforme necessário para posicionar corretamente */
+      border-bottom: 6px solid #FDDD6A;
+      background: transparent;
+      border-radius: 0 0 50% 50%;
+    }
+    .content {
+      padding: 32px;
+      text-align: center;
+      margin-top: 10px; /* Ajuste conforme necessário */
+    }
+    .content h1 {
+      font-size: 26px;
+      font-weight: bold;
+      color: #333333;
+      margin-bottom: 16px;
+    }
+    .content p {
+      font-size: 16px;
+      color: #4a4a4a;
+      line-height: 24px;
+      margin-bottom: 24px;
+    }
+    .cta {
+      display: inline-block;
+      background-color: #fbbf24;
+      color: #191b41;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      margin-top: 16px;
+    }
+    .footer {
+      padding: 24px;
+      font-size: 14px;
+      color: #777777;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    /* RESPONSIVIDADE */
+    @media only screen and (max-width: 620px) {
+      .email-container {
+        width: 100% !important;
+      }
+      .content {
+        padding: 24px;
+      }
+      .cta {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .wave {
+        width: 95%;
+        left: 2.5%;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <table class="email-container" cellpadding="0" cellspacing="0" role="presentation">
+    <!-- HEADER -->
+    <tr>
+      <td class="header">
+        <img class="logo" src="cid:LogoDelfos.png" alt="Delfos Logo" />
+      </td>
+    </tr>
+    
+    <!-- WAVE ELEMENT -->
+    <tr>
+      <td class="wave-container" style="padding: 0; margin: 0; background-color: #1c2856; border: 0;">
+          <div style="width: 100%; overflow: hidden; line-height: 0; padding-top: 10px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80" preserveAspectRatio="none" style="display: block; width: 100%; height: 50px; margin-top: 5px;">
+                  <!-- Onda amarela (superior) -->
+                  <path
+                      d="M0 60c50 0 100-25 150-30 50-5 100 20 150 25 50 5 100-30 150-35 50-5 100 30 150 35 50 5 100-25 150-30 50-5 100 20 150 25 50 5 100-25 150-30 50-5 100 25 150 40V100H0Z"
+                      fill="#FDDD6A"
+                  ></path>
+                  <!-- Onda branca (inferior) -->
+                  <path
+                      d="M0 70c50 0 100-25 150-30 50-5 100 20 150 25 50 5 100-30 150-35 50-5 100 30 150 35 50 5 100-25 150-30 50-5 100 20 150 25 50 5 100-25 150-30 50-5 100 25 150 40V100H0Z"
+                      fill="#FFFFFF"
+                  ></path>
+              </svg>
+          </div>
+      </td>
+    </tr>
+    <!-- CONTENT -->
+    <tr>
+      <td class="content">
+        <h1>Bem-vindo (a) ao Delfos!</h1>
+        <p>
+          <strong>[Nome do usuário que convidou]</strong> convidou você a acessar 
+          a plataforma Delfos com o perfil <strong>[perfil]</strong>.
+        </p>
+        <p>Sinta-se à vontade para explorar todos os recursos que a Delfos tem a oferecer.</p>
+        <a href="https://delfos.com.br" class="cta">Acesse aqui o Delfos</a>
+        <p>
+          A nossa equipe está sempre à disposição para garantir que você tenha
+          a melhor experiência possível.
+        </p>
+        <p>
+          Caso precise de qualquer assistência ou tenha dúvidas, não hesite em nos contatar.
+        </p>
+        <p>Mais uma vez, seja bem-vindo(a)!</p>
+        <p>Atenciosamente, <br />Equipe Delfos</p>
+      </td>
+    </tr>
+
+    <!-- FOOTER -->
+    <tr>
+      <td class="footer">
+        <p>
+          Este é um e-mail automático. Caso tenha dúvidas ou precise de suporte, 
+          <a href="mailto:suporte@delfos.com.br">contate nossa equipe</a>.
+        </p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
